@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
-
+        public Spoiler spoiler;
 	public float moveSpeed = 0.2f;
 	public Rect bounds;
 
@@ -40,5 +40,7 @@ public class PlayerController : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D collider) {
 		Destroy (collider.gameObject);
+		spoiler = gameObject.GetComponent<Spoiler>();
+		spoiler.showSpoiler();
 	}
 }

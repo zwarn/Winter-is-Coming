@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour {
 	float difficultyTime;
 	float fireTime;
 	float boulderTime;
+	public bool pause;
 
 	// Use this for initialization
 	void Start () {
