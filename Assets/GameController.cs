@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour {
 	public GameObject level;
 	public GameObject bullet;
 	public GameObject player;
+	public bool pause;
 
 	// Use this for initialization
 	void Start () {
