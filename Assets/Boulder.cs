@@ -4,6 +4,7 @@ using System.Collections;
 public class Boulder : MonoBehaviour {
 
 	public float rotationSpeed = 1;
+	public float speed = 20f;
 
 	public Vector3 direction = new Vector3(0,0,0);
 
@@ -16,6 +17,6 @@ public class Boulder : MonoBehaviour {
 	void Update () {
 		transform.Rotate(new Vector3(0,0,rotationSpeed));
 
-		transform.position += direction * Time.deltaTime;
+		transform.position += direction * Time.deltaTime * speed;
 	}
 }
