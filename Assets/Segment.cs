@@ -11,8 +11,8 @@ public class Segment : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (transform.position.y < -51) {
-			transform.Translate(new Vector3(0,102,0));
+		if (transform.position.y < -30.5) {
+			transform.Translate(new Vector3(0,61,0));
 		}
 
 	}
