@@ -3,7 +3,8 @@ using System.Collections;
  
 public class Spoiler : MonoBehaviour {
        
-        public GameObject world;
+    public GameObject world;
+	public GUIStyle style;
 	GameController control;
 
 	void Start () {
@@ -14,12 +15,12 @@ public class Spoiler : MonoBehaviour {
           "A Lannister always pays his depts",
           "Fear cuts deeper than swords",
           "Winter is coming",
-          "When you play a game of thrones you spoil or you die",
+          "When you play a game of thrones you\n spoil or you die",
           "If I look back I am lost",
           "Nothing burns like the cold",
 	  "You know nothing John Snow",
-          "Different roads sometimes lead to the same castle",
-          "All dwarfs may be bastards, yet not all bastards need be dwarfs",	  
+          "Different roads sometimes lead to\n the same castle",
+          "All dwarfs may be bastards, yet not\n all bastards need be dwarfs",	  
 	};
 
         string[] spoilers = {
@@ -29,15 +30,15 @@ public class Spoiler : MonoBehaviour {
 	  "A king in the north",
 	  "Theon joins the Night's Watch",
 	  "Bran will kill Hodor",
-	  "Melisandre works with the white walkers",
-	  "Tyrion is really a Targaryen",
+	  "Melisandre works with the\n white walkers",
+	  "Tyrion is really a\n Targaryen",
 	  "Arya will marry Theon",
 	  "Ygritte is Sansa's mother",
-	  "Bran learns to fly a dragon",
+	  "Bran learns to fly\n a dragon",
 	  "Weddings can be nice",
-	  "Cercei and Joffrey have an affair",
-	  "Stannis will take the Iron Throne",
-	  "Eddard will come back as a White Walker"
+	  "Cercei and Joffrey have\n an affair",
+	  "Stannis will take the\n Iron Throne",
+	  "Eddard will come back as\n a White Walker"
         };
 
 	string randomSpoiler() {
@@ -49,12 +50,12 @@ public class Spoiler : MonoBehaviour {
 
 	void OnGUI() {
 	  if (control.pause) {
-	    int width = 640;
-	    int height = 700;
+	    int width = 1024;
+	    int height = 768;
 	    int centerY = height/2;
 
 	    GUI.Box(new Rect(10, centerY-200,width-20,400), "Spoiler is coming");
-	    GUI.Label(new Rect(20,centerY-170,width-40,300), currentSpoiler);
+	    GUI.Label(new Rect(20,centerY-170,width-40,300), currentSpoiler, style);
 	    if (GUI.Button (new Rect (30,centerY+100,width-60,60), "I knew it!")) {
 	      Time.timeScale=1.0f;
 	      control.pause=false;

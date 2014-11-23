@@ -15,7 +15,11 @@ public class GameController : MonoBehaviour {
 	float difficultyTime;
 	float fireTime;
 	float boulderTime;
-	public bool pause;
+	public bool pause = false;
+
+	public AudioClip boulderSound;
+	public AudioClip arrowSound;
+	public AudioClip loseSound;
 
 	// Use this for initialization
 	void Start () {
@@ -51,6 +55,8 @@ public class GameController : MonoBehaviour {
 			bulletComponent.direction.x = player.transform.position.x - pos3D.x;
 			bulletComponent.direction.y = player.transform.position.y - pos3D.y;
 			bulletComponent.direction.Normalize();
+
+			AudioSource.PlayClipAtPoint(boulderSound,Camera.main.transform.position);
 		}
 
 		if (Time.time > difficultyTime) {
